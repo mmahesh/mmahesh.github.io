@@ -33,13 +33,13 @@ kramdown:
 ####################################
 #
 owner:
-  name: Leonids
+  name: Mahesh Chandra Mukkamala
   avatar: leonids-logo.png
-  job: "A jekyll theme"
-  bio: "A simple and awesome blog theme powered by jekyll."
+  job: "Research Assistant, Machine learning Group, Saarland University"
+  bio: "Interested in Machine learning and Large scale optimization"
   email:
   disqus-shortname:
-  twitter: #username
+  twitter: mmahesh873
   facebook: #username
   google:
     plus: #username
@@ -48,10 +48,10 @@ owner:
     ad-client:
     ad-slot:
   bing-verify:
-  github: #username
+  github: mmahesh
   gitlab: #username
   stackoverflow: #123456/username   from a "http://stackoverflow.com/users/123456/username" link
-  linkedin: #username
+  linkedin: maheshchandra
   skype: #username
   xing: #username
   instagram: #username
