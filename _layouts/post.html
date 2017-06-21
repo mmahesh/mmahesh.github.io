@@ -31,8 +31,16 @@ layout: default
       </span>
       •
       {% include read_time.html %}
+      {% if page.categories.size > 0 %}
+      •
+      {% for cat in page.categories %}
+        <a style="color:red;" class="post-cat" href="{{ site.url }}/categories/#{{ cat }}">{{ cat }}</a>
+        {% unless forloop.last %}
+        <span>/</span>
+        {% endunless %}
+      {% endfor %}
+      {% endif %}
     </span>
-
   </header>
 
   <article class="post-content">
