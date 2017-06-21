@@ -2,7 +2,7 @@
 layout: post
 title:  "Variants of RMSProp and Adagrad with Logarithmic Regret Bounds"
 date:   2017-06-21 
-categories: [others]
+categories: [online convex optimization, stochastic optimization, machine learning, deep learning]
 comments: true
 ---
 My paper titled "Variants of RMSProp and Adagrad with Logarithmic Regret Bounds" written in collaboration with Prof.Matthias Hein, Saarland University has been accepted at ICML 2017. Please find the conference (short) version [here](http://www.ml.uni-saarland.de/Publications/MukHei-VariantsRMSPropAdagradLogRegret.pdf) and the long version [here](http://www.ml.uni-saarland.de/Publications/MukHei-VariantsRMSPropAdagradLogRegretLongVersion.pdf) or on arxiv [here](https://arxiv.org/abs/1706.05507). Please find the abstract below.
