@@ -3,6 +3,8 @@ layout: post
 title:  "Variants of RMSProp and Adagrad with Logarithmic Regret Bounds"
 date:   2017-06-21 
 categories: [online convex optimization, stochastic optimization, machine learning, deep learning]
+excerpt: "My paper titled Variants of RMSProp and Adagrad with Logarithmic Regret Bounds written in collaboration with Prof.Matthias Hein, Saarland University has been accepted at ICML 2017. Adaptive gradient methods have become recently very popular, in particular as they have been shown to be useful in the training of deep neural networks. In this paper we have analyzed RMSProp, originally proposed for the training of deep neural networks, in the context of online convex optimization and show optimal regret bounds. Moreover, we propose two variants SC-Adagrad and SC-RMSProp for which we show logarithmic regret bounds for strongly convex functions. Finally, we demonstrate in the experiments that these new variants outperform other adaptive gradient techniques or stochastic gradient descent in the optimization of strongly convex functions as well as in training of deep neural networks.
+"
 comments: true
 ---
 My paper titled "Variants of RMSProp and Adagrad with Logarithmic Regret Bounds" written in collaboration with Prof.Matthias Hein, Saarland University has been accepted at ICML 2017. Please find the conference (short) version [here](http://www.ml.uni-saarland.de/Publications/MukHei-VariantsRMSPropAdagradLogRegret.pdf) and the long version [here](http://www.ml.uni-saarland.de/Publications/MukHei-VariantsRMSPropAdagradLogRegretLongVersion.pdf) or on arxiv [here](https://arxiv.org/abs/1706.05507). Please find the abstract below.
