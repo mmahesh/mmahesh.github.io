@@ -29,4 +29,4 @@ Also, this work leads to following open questions.
 
 > All the algorithms proposed in our paper, SC-Adagrad, SC-RMSProp and RMSProp (Ours) can be extended to use the full matrices. We are exploring this currently though it seems like we dont gain much in the regret bound and clearly the full matrix versions of the algorithms are not very helpful in large scale machine learning context.
 
-There can be more open questions possible, but i will leave it for now and will update whenever i get some time.
+There can be more open questions possible, but i will leave it here for now and will update whenever i get some time.
