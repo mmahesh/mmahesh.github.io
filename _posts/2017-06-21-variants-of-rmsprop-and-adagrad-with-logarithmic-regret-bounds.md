@@ -1,9 +1,15 @@
 ---
 layout: post
-title:  "Variants of RMSProp and Adagrad with Logarithmic Regret Bounds"
+title:  "Variants of RMSProp and Adagrad with Logarithmic Regret Bounds ( along with some Open questions)"
 date:   2017-06-21 
 categories: [online convex optimization, stochastic optimization, machine learning, deep learning]
-excerpt: "My paper titled Variants of RMSProp and Adagrad with Logarithmic Regret Bounds written in collaboration with Prof.Matthias Hein, Saarland University has been accepted at ICML 2017. Adaptive gradient methods have become recently very popular, in particular as they have been shown to be useful in the training of deep neural networks. In this paper we have analyzed RMSProp, originally proposed for the training of deep neural networks, in the context of online convex optimization and show optimal regret bounds. Moreover, we propose two variants SC-Adagrad and SC-RMSProp for which we show logarithmic regret bounds for strongly convex functions. Finally, we demonstrate in the experiments that these new variants outperform other adaptive gradient techniques or stochastic gradient descent in the optimization of strongly convex functions as well as in training of deep neural networks.
+excerpt: "My paper titled \"Variants of RMSProp and Adagrad with Logarithmic Regret Bounds\" written in collaboration with Prof.Matthias Hein, Saarland University has been accepted at ICML 2017. Please find the abstract below.
+<br>
+<br>
+Adaptive gradient methods have become recently very popular, in particular as they have been shown to be useful in the training of deep neural networks. In this paper we have analyzed RMSProp, originally proposed for the training of deep neural networks, in the context of online convex optimization and show $\\sqrt{T}$-type optimal regret bounds. Moreover, we propose two variants SC-Adagrad and SC-RMSProp for which we show logarithmic regret bounds for strongly convex functions. Finally, we demonstrate in the experiments that these new variants outperform other adaptive gradient techniques or stochastic gradient descent in the optimization of strongly convex functions as well as in training of deep neural networks.
+<br>
+<br>
+Disclaimer: This article is very mathematical, and i will try to write a tutorial soon. However please have a look at the end of the paper for Deep learning experiments where we compare our methods exhaustively.
 "
 comments: true
 ---
@@ -23,3 +29,4 @@ Also, this work leads to following open questions.
 
 > All the algorithms proposed in our paper, SC-Adagrad, SC-RMSProp and RMSProp (Ours) can be extended to use the full matrices. We are exploring this currently though it seems like we dont gain much in the regret bound and clearly the full matrix versions of the algorithms are not very helpful in large scale machine learning context.
 
+There can be more open questions possible, but i will leave it for now and will update whenever i get some time.
