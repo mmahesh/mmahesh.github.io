@@ -59,6 +59,7 @@ Note there are two changes to Adagrad here,
 
 # TODO: Motivation, more details fill in other algorithms aswell
 # Give Code aswell
+# Add resnet, cnn exps
 
 ## RMSProp
 
