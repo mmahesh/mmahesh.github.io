@@ -22,7 +22,89 @@
 
    <url>
 
+      <loc>https://mmahesh.github.io/publications/</loc>
+
+      <changefreq>daily</changefreq>
+
+
+   </url>
+
+   <url>
+
       <loc>https://mmahesh.github.io/about_me/</loc>
+
+      <changefreq>daily</changefreq>
+
+
+   </url>
+
+
+   <url>
+
+      <loc>http://mmahesh.github.io/</loc>
+
+      <changefreq>daily</changefreq>
+
+      <priority>1</priority>
+
+   </url>
+
+   <url>
+
+      <loc>http://mmahesh.github.io/articles/2017-06/variants-of-rmsprop-and-adagrad-with-logarithmic-regret-bounds</loc>
+
+      <changefreq>weekly</changefreq>
+
+   </url>
+
+   <url>
+
+      <loc>http://mmahesh.github.io/publications/</loc>
+
+      <changefreq>daily</changefreq>
+
+
+   </url>
+
+   <url>
+
+      <loc>http://mmahesh.github.io/about_me/</loc>
+
+      <changefreq>daily</changefreq>
+
+
+   </url>
+
+   <url>
+
+      <loc>mmahesh.github.io/</loc>
+
+      <changefreq>daily</changefreq>
+
+      <priority>1</priority>
+
+   </url>
+
+   <url>
+
+      <loc>mmahesh.github.io/articles/2017-06/variants-of-rmsprop-and-adagrad-with-logarithmic-regret-bounds</loc>
+
+      <changefreq>weekly</changefreq>
+
+   </url>
+
+   <url>
+
+      <loc>mmahesh.github.io/publications/</loc>
+
+      <changefreq>daily</changefreq>
+
+
+   </url>
+
+   <url>
+
+      <loc>mmahesh.github.io/about_me/</loc>
 
       <changefreq>daily</changefreq>
 
