@@ -47,7 +47,7 @@ $$\theta_{t+1}\gets\theta_t - \alpha \frac{g_t}{\sqrt{v_{t+1}}+\epsilon}$$
 
 ## [SC-Adagrad](http://www.ml.uni-saarland.de/Publications/MukHei-VariantsRMSPropAdagradLogRegret.pdf){:target="_blank"}
 
-Choosing the same notation as Adam, we have Adagrad as follows
+Choosing the same notation as Adam, we have SC-Adagrad as follows
 
 
 $$v_{t+1} = \beta v_t + (1-\beta)g_{t}^2$$
