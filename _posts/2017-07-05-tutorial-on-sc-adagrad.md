@@ -2,7 +2,7 @@
 layout: post
 title:  "Tutorial on new stochastic gradient methods for deep learning"
 date:   2017-07-05 
-categories: [online convex optimization, stochastic optimization, machine learning, deep learning]
+categories: [stochastic optimization, machine learning, deep learning]
 excerpt: "This is a tutorial on SC-Adagrad, a new stochastic gradient method and some comparisions to other methods in particular Adam, SGD, Adagrad."
 comments: true
 ---
@@ -60,7 +60,7 @@ Note there are two changes compared to Adagrad,
 
 > Also we changed the numerical stability parameter from $\epsilon$ to $\xi_2 e^{-\xi_1 v_{t+1}}$ where  in general we choose $\xi_1=0.1, \xi_2=0.1$.
 
-> Adagrad was developed for convex problems, whereas we developed the SC-Adagrad primarily for Strongly convex problems. To our surprise, it had excellent performance on many deep neural networks in particular ResNet-18, CNN and MLP.
+> Adagrad was developed for convex problems, whereas we developed the SC-Adagrad primarily for Strongly convex problems. To our surprise, it had excellent performance (in terms of Test accuracy) on many deep neural networks in particular ResNet-18, CNN and MLP.
 
 The blogs mentioned earlier, do a pretty good job in going through the details of stochastic gradient methods. This post is just to get a brief overview of SC-Adagrad Algorithm. For detailed analysis in Online convex optimation framework, for getting to know equivalence of RMSProp and Adagrad, check our paper [here](http://www.ml.uni-saarland.de/Publications/MukHei-VariantsRMSPropAdagradLogRegret.pdf){:target="_blank"}.
 
