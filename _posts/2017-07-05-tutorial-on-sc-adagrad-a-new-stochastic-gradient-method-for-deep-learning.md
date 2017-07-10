@@ -107,6 +107,13 @@ and ofcourse
 
 [BlogPost2](http://colinraffel.com/wiki/stochastic_optimization_techniques){:target="_blank"}
 
+and other interesting reads
+
+[UFLDL Tutorial Post1](http://ufldl.stanford.edu/tutorial/supervised/OptimizationStochasticGradientDescent/){:target="_blank"}
+
+[Deep learning book Chapter](http://www.deeplearningbook.org/contents/optimization.html){:target="_blank"}
+
+[Stanford C231n notes](http://cs231n.github.io/optimization-1/){:target="_blank"}
 <!-- TODO: Motivation, more details fill in other algorithms aswell
 Give Code aswell maybe github repo
 Add resnet, cnn exps -->
