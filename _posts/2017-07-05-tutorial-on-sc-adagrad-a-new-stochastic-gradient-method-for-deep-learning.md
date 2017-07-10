@@ -22,50 +22,89 @@ $$\theta_{t+1}\gets\theta_t - \alpha g_t$$
 
 Choosing the same notation as SGD, and with some additional steps Adam algorithm is as follows
 
-$$m_{t+1} = \beta_1 m_t + (1-\beta_1)g_{t}$$
+$$m_{t} = \beta_1 m_{t-1} + (1-\beta_1)g_{t}$$
 
-$$\widehat{m}_{t+1} = \frac{m_{t+1}}{1-\beta_1^{t+1}}$$
+$$\widehat{m}_{t} = \frac{m_{t}}{1-\beta_1^{t}}$$
 
-$$v_{t+1} = \beta_2 v_t + (1-\beta_2)g_{t}^2$$
+$$v_{t} = \beta_2 v_{t-1} + (1-\beta_2)g_{t}^2$$
 
-$$\widehat{v}_{t+1} = \frac{v_{t+1}}{1-\beta_2^{t+1}}$$
+$$\widehat{v}_{t} = \frac{v_{t}}{1-\beta_2^{t}}$$
 
-$$\theta_{t+1}\gets\theta_t - \alpha \frac{\widehat{m}_{t+1}}{\sqrt{\widehat{v}_{t+1}}+\epsilon}$$
+$$\theta_{t+1}\gets\theta_t - \alpha \frac{\widehat{m}_{t}}{\sqrt{\widehat{v}_{t}}+\epsilon}$$
 
-Here $\epsilon$ is a numerical stability parameter. The terms $m_{t+1}$ and $v_{t+1}$ represent second order moments of the gradient. Depending on how the moment is calculated, the bias correction term has to be applied to obtain $$\widehat{m}_{t+1}$$ and $$\widehat{v}_{t+1}$$ respectively. Please find the details in Adam paper [here](https://arxiv.org/pdf/1412.6980.pdf){:target="_blank"}.
+Here $\epsilon$ is a numerical stability parameter. The terms $m_{t}$ and $v_{t}$ represent second order moments of the gradient. Depending on how the moment is calculated, the bias correction term has to be applied to obtain $$\widehat{m}_{t}$$ and $$\widehat{v}_{t}$$ respectively. Please find the details in Adam paper [here](https://arxiv.org/pdf/1412.6980.pdf){:target="_blank"}.
 
+## [RMSProp](http://www.cs.toronto.edu/~tijmen/csc321/slides/lecture_slides_lec6.pdf){:target="_blank"}
+
+Choosing $\beta > 0$ typically $0.9$ the RMSProp algorithm is given by
+
+$$v_{t} = \beta v_{t-1} + (1-\beta) g_{t}^2$$
+
+$$\theta_{t+1}\gets\theta_t - \alpha \frac{g_t}{\sqrt{v_{t}}+\epsilon}$$
+
+We modify to propose a new variant of RMSProp as follows
+
+$$v_{t} = \beta_t v_{t-1} + (1-\beta_t) g_{t}^2$$
+
+$$\theta_{t+1}\gets\theta_t - \alpha_t \frac{g_t}{\sqrt{v_{t}}+\epsilon_t}$$
+
+In general $1- \frac{1}{t} \leq \beta_t \leq 1- \frac{\gamma}{t}$ where $0<\gamma \leq 1$. Also, $\alpha_t = \frac{\alpha}{\sqrt{t}}$ and $\epsilon_t = \frac{\delta}{\sqrt{t}}$  where $\delta > 0$ typically $10^{-8}$, for more details see for Section 4  [here](http://www.ml.uni-saarland.de/Publications/MukHei-VariantsRMSPropAdagradLogRegret.pdf){:target="_blank"}.
 
 ## [Adagrad](http://www.magicbroom.info/Papers/DuchiHaSi10.pdf){:target="_blank"}
 
-Adam was proposed after Adagrad, for conveniece i described Adam first and Adagrad here. Choosing the same notation as Adam, the Adagrad algorithm is as follows
+Adam was proposed after Adagrad, for conveniece i described Adam first and Adagrad here. Choosing the same notation as Adam, the Adagrad algorithm is as follows 
 
 
-$$v_{t+1} =  v_t + g_{t}^2$$
+$$v_{t} = v_{t-1} + g_{t}^2$$
 
-$$\theta_{t+1}\gets\theta_t - \alpha \frac{g_t}{\sqrt{v_{t+1}}+\epsilon}$$
+$$\theta_{t+1}\gets\theta_t - \alpha \frac{g_t}{\sqrt{v_{t}}+\epsilon}$$
 
-Unlike adam, first order moments are ignored.
+Unlike adam, first order moments are ignored. Even though it seemed like the second order moment is not calculated, Adagrad actually computes the second order moment. We describe this Subsection 2.3 [here](http://www.ml.uni-saarland.de/Publications/MukHei-VariantsRMSPropAdagradLogRegret.pdf){:target="_blank"}. Also this leads to an interesting phenomenon that Adagrad is a special case of RMSProp which we describe in Section 4 in detail.
 
 ## [SC-Adagrad](http://www.ml.uni-saarland.de/Publications/MukHei-VariantsRMSPropAdagradLogRegret.pdf){:target="_blank"}
 
-Choosing the same notation as Adam, we have SC-Adagrad as follows
+Now, we provide the SC-Adagrad below
 
+$$v_{t} = v_{t-1} + g_{t}^2$$
 
-$$v_{t+1} = v_t + g_{t}^2$$
+$$\theta_{t+1}\gets\theta_t - \alpha \frac{g_t}{v_{t}+\xi_2 e^{-\xi_1 v_{t}}}$$
 
-$$\theta_{t+1}\gets\theta_t - \alpha \frac{g_t}{v_{t+1}+\xi_2 e^{-\xi_1 v_{t+1}}}$$
-
-Note there are two changes compared to Adagrad, 
+Note these are the changes compared to Adagrad, 
 
 > We removed the square root in the denominator of Adagrad
 
-> Also we changed the numerical stability parameter from $\epsilon$ to $\xi_2 e^{-\xi_1 v_{t+1}}$ where  in general we choose $\xi_1=0.1, \xi_2=0.1$.
+> Also we changed the numerical stability parameter from $\epsilon$ to $\xi_2 e^{-\xi_1 v_{t}}$ where  in general we choose $\xi_1=0.1, \xi_2=0.1$.
 
 > Adagrad was developed for convex problems, whereas we developed the SC-Adagrad primarily for Strongly convex problems. To our surprise, it had excellent performance (in terms of Test accuracy) on many deep neural networks in particular ResNet-18, CNN and MLP.
 
-The blogs mentioned earlier, do a pretty good job in going through the details of stochastic gradient methods. This post is just to get a brief overview of SC-Adagrad Algorithm. For detailed analysis in Online convex optimation framework, for getting to know equivalence of RMSProp and Adagrad, check our paper [here](http://www.ml.uni-saarland.de/Publications/MukHei-VariantsRMSPropAdagradLogRegret.pdf){:target="_blank"}.
+
+## [SC-RMSProp](http://www.ml.uni-saarland.de/Publications/MukHei-VariantsRMSPropAdagradLogRegret.pdf){:target="_blank"}
+In the same spirit of RMSProp we have SC-RMSProp given by
+
+$$v_{t} = \beta v_{t-1} + (1-\beta) g_{t}^2$$
+
+$$\theta_{t+1}\gets\theta_t - \alpha \frac{g_t}{tv_{t}+\xi_2 e^{-\xi_1 tv_{t}}}$$
+
+The blogs mentioned earlier, do a pretty good job in going through the details of stochastic gradient methods. This post is just to get a brief overview of SC-Adagrad, SC-RMSProp Algorithms. For detailed analysis in Online convex optimation framework, for getting to know equivalence of RMSProp and Adagrad, check our paper [here](http://www.ml.uni-saarland.de/Publications/MukHei-VariantsRMSPropAdagradLogRegret.pdf){:target="_blank"}.
+
+
 
 Thanks for reading the post. Stay tuned for more updates. :)
+
+## References:
+
+[Adagrad Paper](http://www.magicbroom.info/Papers/DuchiHaSi10.pdf){:target="_blank"}
+
+[RMSProp Slides](http://www.cs.toronto.edu/~tijmen/csc321/slides/lecture_slides_lec6.pdf){:target="_blank"}
+
+[Adam Paper](https://arxiv.org/pdf/1412.6980.pdf){:target="_blank"}
+
+[SC-Adagrad,SC-RMSProp paper](http://www.ml.uni-saarland.de/Publications/MukHei-VariantsRMSPropAdagradLogRegret.pdf){:target="_blank"}
+
+and ofcourse
+
+[BlogPost1](http://sebastianruder.com/optimizing-gradient-descent/){:target="_blank"}
+[BlogPost2](http://colinraffel.com/wiki/stochastic_optimization_techniques){:target="_blank"}
 
 <!-- TODO: Motivation, more details fill in other algorithms aswell
 Give Code aswell maybe github repo
