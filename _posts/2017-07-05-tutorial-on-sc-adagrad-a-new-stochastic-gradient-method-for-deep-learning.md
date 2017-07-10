@@ -28,7 +28,7 @@ $$\widehat{m}_{t+1} = \frac{m_{t+1}}{1-\beta_1^{t+1}}$$
 
 $$v_{t+1} = \beta_2 v_t + (1-\beta_2)g_{t}^2$$
 
-$$\widehat{v}_{t+1} = \frac{v_{t+1}}{1-\beta_1^{t+1}}$$
+$$\widehat{v}_{t+1} = \frac{v_{t+1}}{1-\beta_2^{t+1}}$$
 
 $$\theta_{t+1}\gets\theta_t - \alpha \frac{\widehat{m}_{t+1}}{\sqrt{\widehat{v}_{t+1}}+\epsilon}$$
 
