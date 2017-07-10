@@ -6,7 +6,7 @@ categories: [stochastic optimization, machine learning, deep learning]
 excerpt: "This is a tutorial on SC-Adagrad, a new stochastic gradient method and some comparisions to other methods in particular Adam, SGD, Adagrad."
 comments: true
 ---
-This is a brief tutorial (without lot of mathematical details) on SC-Adagrad, a new stochastic optimization method proposed in [here](http://www.ml.uni-saarland.de/Publications/MukHei-VariantsRMSPropAdagradLogRegret.pdf){:target="_blank"}. Disclaimer: I am one of the author :). Clearly, there is an abundance of stochastic optimization methods for training deep neural networks. Recently, [Adam](https://arxiv.org/pdf/1412.6980.pdf){:target="_blank"} has become a go to optimization method for training deep nets. In this post, I will briefly review Stochastic Gradient Descent, Adam, Adagrad and finally dwell into the details of SC-Adagrad.
+This is a brief tutorial (without lot of mathematical details) on SC-Adagrad, a new stochastic optimization method proposed in [here](http://www.ml.uni-saarland.de/Publications/MukHei-VariantsRMSPropAdagradLogRegret.pdf){:target="_blank"}. Disclaimer: I am one of the author :). This is joint work with Prof.Dr.Matthias Hein. Clearly, there is an abundance of stochastic optimization methods for training deep neural networks. Recently, [Adam](https://arxiv.org/pdf/1412.6980.pdf){:target="_blank"} has become a go to optimization method for training deep nets. In this post, I will briefly review Stochastic Gradient Descent, Adam, Adagrad and finally dwell into the details of SC-Adagrad.
 
 This is definitely not the first tutorial of its kind. There are many excellent blog posts which briefly summarize the stochastic optimization methods. Some of them are [BlogPost1](http://sebastianruder.com/optimizing-gradient-descent/){:target="_blank"} and [BlogPost2](http://colinraffel.com/wiki/stochastic_optimization_techniques){:target="_blank"}. In my opinion, if you read these blog posts before reading this post, you are more likely to understand SC-Adagrad algorithm better. For those who are more mathematically inclined, i would suggest to go through the [paper](http://www.ml.uni-saarland.de/Publications/MukHei-VariantsRMSPropAdagradLogRegret.pdf){:target="_blank"} instead.
 
@@ -32,7 +32,7 @@ $$\widehat{v}_{t+1} = \frac{v_{t+1}}{1-\beta_2^{t+1}}$$
 
 $$\theta_{t+1}\gets\theta_t - \alpha \frac{\widehat{m}_{t+1}}{\sqrt{\widehat{v}_{t+1}}+\epsilon}$$
 
-Here $\epsilon$ is a numerical stability parameter. The terms $m_{t+1}$ and $v_{t+1}$ represent second order moments of the gradient. Depending on how the moment is calculated, the bias correction term has to be applied to obtain $\widehat{m}_{t+1}$ and $\widehat{v}_{t+1}$ respectively. Please find the details in Adam paper [here](https://arxiv.org/pdf/1412.6980.pdf){:target="_blank"}.
+Here $\epsilon$ is a numerical stability parameter. The terms $m_{t+1}$ and $v_{t+1}$ represent second order moments of the gradient. Depending on how the moment is calculated, the bias correction term has to be applied to obtain $$\widehat{m}_{t+1}$$ and $$\widehat{v}_{t+1}$$ respectively. Please find the details in Adam paper [here](https://arxiv.org/pdf/1412.6980.pdf){:target="_blank"}.
 
 
 ## [Adagrad](http://www.magicbroom.info/Papers/DuchiHaSi10.pdf){:target="_blank"}
