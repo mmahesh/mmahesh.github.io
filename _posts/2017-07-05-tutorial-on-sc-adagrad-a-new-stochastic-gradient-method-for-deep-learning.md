@@ -81,7 +81,7 @@ Note these are the changes compared to Adagrad,
 ## [SC-RMSProp](http://www.ml.uni-saarland.de/Publications/MukHei-VariantsRMSPropAdagradLogRegret.pdf){:target="_blank"}
 In the same spirit of RMSProp we have SC-RMSProp given by
 
-$$v_{t} = \beta v_{t-1} + (1-\beta) g_{t}^2$$
+$$v_{t} = \beta_t v_{t-1} + (1-\beta_t) g_{t}^2$$
 
 $$\theta_{t+1}\gets\theta_t - \alpha \frac{g_t}{tv_{t}+\xi_2 e^{-\xi_1 tv_{t}}}$$
 
