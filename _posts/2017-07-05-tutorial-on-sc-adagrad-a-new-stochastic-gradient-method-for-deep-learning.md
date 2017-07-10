@@ -3,10 +3,10 @@ layout: post
 title:  "Tutorial on new stochastic gradient methods for deep learning"
 date:   2017-07-05 
 categories: [stochastic optimization, machine learning, deep learning]
-excerpt: "This is a tutorial on SC-Adagrad, a new stochastic gradient method and some comparisions to other methods in particular Adam, SGD, Adagrad."
+excerpt: "This is a brief tutorial (without lot of mathematical details) on SC-Adagrad, a new stochastic optimization method proposed in  <a href='http://www.ml.uni-saarland.de/Publications/MukHei-VariantsRMSPropAdagradLogRegret.pdf' target='_blank' ><b>here</b></a> . Disclaimer: I am one of the author :). This is joint work with Prof.Dr.Matthias Hein. Clearly, there is an abundance of stochastic optimization methods for training deep neural networks. Recently, Adam has become a go to optimization method for training deep nets. In this post, I will briefly review Stochastic Gradient Descent (SGD), Adam, Adagrad, RMSProp and finally dwell into the details of SC-Adagrad, SC-RMSProp and a new variant of RMSProp we proposed."
 comments: true
 ---
-This is a brief tutorial (without lot of mathematical details) on SC-Adagrad, a new stochastic optimization method proposed in [here](http://www.ml.uni-saarland.de/Publications/MukHei-VariantsRMSPropAdagradLogRegret.pdf){:target="_blank"}. Disclaimer: I am one of the author :). This is joint work with Prof.Dr.Matthias Hein. Clearly, there is an abundance of stochastic optimization methods for training deep neural networks. Recently, [Adam](https://arxiv.org/pdf/1412.6980.pdf){:target="_blank"} has become a go to optimization method for training deep nets. In this post, I will briefly review Stochastic Gradient Descent, Adam, Adagrad, RMSProp and finally dwell into the details of SC-Adagrad, SC-RMSProp and a new variant of RMSProp we proposed.
+This is a brief tutorial (without lot of mathematical details) on SC-Adagrad, a new stochastic optimization method proposed in [here](http://www.ml.uni-saarland.de/Publications/MukHei-VariantsRMSPropAdagradLogRegret.pdf){:target="_blank"}. Disclaimer: I am one of the author :). This is joint work with Prof.Dr.Matthias Hein. Clearly, there is an abundance of stochastic optimization methods for training deep neural networks. Recently, [Adam](https://arxiv.org/pdf/1412.6980.pdf){:target="_blank"} has become a go to optimization method for training deep nets. In this post, I will briefly review Stochastic Gradient Descent (SGD), Adam, Adagrad, RMSProp and finally dwell into the details of SC-Adagrad, SC-RMSProp and a new variant of RMSProp we proposed.
 
 This is definitely not the first tutorial of its kind. There are many excellent blog posts which briefly summarize the stochastic optimization methods. Some of them are [BlogPost1](http://sebastianruder.com/optimizing-gradient-descent/){:target="_blank"} and [BlogPost2](http://colinraffel.com/wiki/stochastic_optimization_techniques){:target="_blank"}. In my opinion, if you read these blog posts before reading this post, you are more likely to understand SC-Adagrad algorithm better. For those who are more mathematically inclined, i would suggest to go through the [paper](http://www.ml.uni-saarland.de/Publications/MukHei-VariantsRMSPropAdagradLogRegret.pdf){:target="_blank"} instead.
 
@@ -104,6 +104,7 @@ Thanks for reading the post. Stay tuned for more updates. :)
 and ofcourse
 
 [BlogPost1](http://sebastianruder.com/optimizing-gradient-descent/){:target="_blank"}
+
 [BlogPost2](http://colinraffel.com/wiki/stochastic_optimization_techniques){:target="_blank"}
 
 <!-- TODO: Motivation, more details fill in other algorithms aswell
