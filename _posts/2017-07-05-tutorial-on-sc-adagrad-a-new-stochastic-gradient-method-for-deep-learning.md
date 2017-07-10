@@ -20,7 +20,7 @@ $$\theta_{t+1}\gets\theta_t - \alpha g_t$$
 
 ## [Adam](https://arxiv.org/pdf/1412.6980.pdf){:target="_blank"}   
 
-Choosing the same notation as SGD, we have some additional steps here
+Choosing the same notation as SGD, and with some additional steps Adam algorithm is as follows
 
 $$m_{t+1} = \beta_1 m_t + (1-\beta_1)g_{t}$$
 
@@ -32,25 +32,26 @@ $$\widehat{v}_{t+1} = \frac{v_{t+1}}{1-\beta_2^{t+1}}$$
 
 $$\theta_{t+1}\gets\theta_t - \alpha \frac{\widehat{m}_{t+1}}{\sqrt{\widehat{v}_{t+1}}+\epsilon}$$
 
-Here $\epsilon$ is a numerical stability parameter.
+Here $\epsilon$ is a numerical stability parameter. The terms $m_{t+1}$ and $v_{t+1}$ represent second order moments of the gradient. Depending on how the moment is calculated, the bias correction term has to be applied to obtain $\widehat{m}_{t+1}$ and $\widehat{v}_{t+1}$ respectively. Please find the details in Adam paper [here](https://arxiv.org/pdf/1412.6980.pdf){:target="_blank"}.
 
 
 ## [Adagrad](http://www.magicbroom.info/Papers/DuchiHaSi10.pdf){:target="_blank"}
 
-Adam was proposed after Adagrad, for conveniece i described Adam first and Adagrad here. Choosing the same notation as Adam, we have Adagrad as follows
+Adam was proposed after Adagrad, for conveniece i described Adam first and Adagrad here. Choosing the same notation as Adam, the Adagrad algorithm is as follows
 
 
-$$v_{t+1} = \beta v_t + (1-\beta)g_{t}^2$$
+$$v_{t+1} =  v_t + g_{t}^2$$
 
 $$\theta_{t+1}\gets\theta_t - \alpha \frac{g_t}{\sqrt{v_{t+1}}+\epsilon}$$
 
+Unlike adam, first order moments are ignored.
 
 ## [SC-Adagrad](http://www.ml.uni-saarland.de/Publications/MukHei-VariantsRMSPropAdagradLogRegret.pdf){:target="_blank"}
 
 Choosing the same notation as Adam, we have SC-Adagrad as follows
 
 
-$$v_{t+1} = \beta v_t + (1-\beta)g_{t}^2$$
+$$v_{t+1} = v_t + g_{t}^2$$
 
 $$\theta_{t+1}\gets\theta_t - \alpha \frac{g_t}{v_{t+1}+\xi_2 e^{-\xi_1 v_{t+1}}}$$
 
