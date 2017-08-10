@@ -44,11 +44,13 @@ $$\theta_{t+1}\gets\theta_t - \alpha \frac{g_t}{\sqrt{v_{t}}+\epsilon}$$
 
 We modify to propose a new variant of RMSProp as follows
 
+$$\beta_t = 1 - \frac{1}{t}$$
+
 $$v_{t} = \beta_t v_{t-1} + (1-\beta_t) g_{t}^2$$
 
-$$\theta_{t+1}\gets\theta_t - \alpha_t \frac{g_t}{\sqrt{v_{t}}+\epsilon_t}$$
+$$\theta_{t+1}\gets\theta_t - \alpha \frac{g_t}{\sqrt{tv_{t}}+\delta}$$
 
-In general $1- \frac{1}{t} \leq \beta_t \leq 1- \frac{\gamma}{t}$ where $0<\gamma \leq 1$. Also, $\alpha_t = \frac{\alpha}{\sqrt{t}}$ and $\epsilon_t = \frac{\delta}{\sqrt{t}}$  where $\delta > 0$ typically $10^{-8}$, for more details see for Section 4  [here](http://www.ml.uni-saarland.de/Publications/MukHei-VariantsRMSPropAdagradLogRegret.pdf){:target="_blank"}.
+where $0<\gamma \leq 1$ and $\delta > 0$ typically $10^{-8}$, for more details see for Section 4  [here](http://www.ml.uni-saarland.de/Publications/MukHei-VariantsRMSPropAdagradLogRegret.pdf){:target="_blank"}.
 
 ## [Adagrad](http://www.magicbroom.info/Papers/DuchiHaSi10.pdf){:target="_blank"}
 
@@ -81,18 +83,28 @@ Note these are the changes compared to Adagrad,
 ## [SC-RMSProp](http://www.ml.uni-saarland.de/Publications/MukHei-VariantsRMSPropAdagradLogRegret.pdf){:target="_blank"}
 In the same spirit of RMSProp we have SC-RMSProp given by
 
+$$\beta_t = 1 -\frac{1}{t}$$
+
 $$v_{t} = \beta_t v_{t-1} + (1-\beta_t) g_{t}^2$$
 
 $$\theta_{t+1}\gets\theta_t - \alpha \frac{g_t}{tv_{t}+\xi_2 e^{-\xi_1 tv_{t}}}$$
 
-
-In general $1- \frac{1}{t} \leq \beta_t \leq 1- \frac{\gamma}{t}$ where $0<\gamma \leq 1$. 
+where $0<\gamma \leq 1$. 
 
 The blogs mentioned earlier, do a pretty good job in going through the details of stochastic gradient methods. This post is just to get a brief overview of SC-Adagrad, SC-RMSProp Algorithms. For detailed analysis in Online convex optimation framework, for getting to know equivalence of RMSProp and Adagrad, check our paper, to see empirical results on ResNet-18 network, CNN and MLP see [here](http://www.ml.uni-saarland.de/Publications/MukHei-VariantsRMSPropAdagradLogRegret.pdf){:target="_blank"} or [here](http://www.ml.uni-saarland.de/Publications/MukHei-VariantsRMSPropAdagradLogRegretLongVersion.pdf){:target="_blank"}.
 
 
 ## Give me code
 [Here you go](https://github.com/mmahesh/variants_of_rmsprop_and_adagrad){:target="_blank"}.
+
+## Overview 
+
+<a href='/main.pdf'>[PDF here]</a>
+
+<div align="center">
+  <a href='https://raw.githubusercontent.com/mmahesh/variants_of_rmsprop_and_adagrad/master/poster_image.jpg' target='_blank'><img src="https://raw.githubusercontent.com/mmahesh/variants_of_rmsprop_and_adagrad/master/poster_image.jpg" target='_blank'></a><br><br>
+</div>
+
 
 Thanks for reading the post. Stay tuned for more updates. :)
 
