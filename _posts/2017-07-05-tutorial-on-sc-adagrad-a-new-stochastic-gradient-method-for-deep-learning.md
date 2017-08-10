@@ -99,8 +99,10 @@ The blogs mentioned earlier, do a pretty good job in going through the details o
 
 ## Overview 
 
-<a href='/main.pdf'>[PDF here]</a>
-
+<a href='/icml_slides.pdf' target='_blank'>[Slides here]</a>
+<br>
+<a href='/main.pdf' target='_blank'>[Poster here]</a>
+<br>
 <div align="center">
   <a href='https://raw.githubusercontent.com/mmahesh/variants_of_rmsprop_and_adagrad/master/poster_image.jpg' target='_blank'><img src="https://raw.githubusercontent.com/mmahesh/variants_of_rmsprop_and_adagrad/master/poster_image.jpg" target='_blank'></a><br><br>
 </div>
