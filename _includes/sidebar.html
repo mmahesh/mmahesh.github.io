@@ -1,12 +1,26 @@
 {% if page.author %} {% assign author = site.data.authors[page.author] %}{% else %}{% assign author = site.owner %} {% endif %}
 
-<div class="cover-card table-cell table-middle">
-  {% if author.avatar %}
-  <img src="{{ site.url }}/img/{{ author.avatar }}" alt="" class="avatar">
-  {% endif %}
-  <a href="{{ site.url }}/" class="author_name">{{ author.name }}</a>
+<div class="cover-card table-cell table-top">
+  <a href="{{ site.url }}/" class="author_name" >{{ author.name }}</a>
   <span class="author_job">{{ author.job }}</span>
   <span class="author_bio mbm">{{ author.bio }}</span>
+  <a class="author_temp" href= "{{ site.url }}" >
+  Home
+  </a>
+  <br>
+  <a class="author_temp" href= "{{ site.url }}/about_me" >
+  About me
+  </a>
+  <br>
+  <a class="author_temp" href= "{{ site.url }}/publications" >
+    Publications
+  </a>
+  <br>
+   <a target=”_blank”  class="author_temp" href= "https://scholar.google.de/citations?user=aLrBW2QAAAAJ" >
+    Google Scholar
+  </a>
+  <br>
+
   <nav class="nav">
     <ul class="nav-list">
       <li class="nav-item">
@@ -19,12 +33,8 @@
       {% endif %} {% endfor %}
     </ul>
   </nav>
+
   {% include social-links.html %}
   <br>
-  <a class="btn" href= "{{ site.url }}/about_me" >
-  About me
-  </a>
-  <a class="btn" href= "{{ site.url }}/publications" >
-    Publications
-  </a>
+
 </div>

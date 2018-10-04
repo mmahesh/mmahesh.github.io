@@ -19,7 +19,7 @@
 }
 .cover-card {
   color: $text-color;
-  padding: 0 30px;
+  padding: 0 0px;
   .avatar {
     border-radius: 50%;
     width: 100px;
@@ -28,16 +28,20 @@
   }
   .author_name {
     display: block;
-    color: #F36170;
-    font-size: 1.5em;
-    text-transform: lowercase;
+    color: #191970;
+    font-size: 1em;
+    font-weight: 700;
+  }
+  .author_temp {
+    display: block;
+    color: #191970;
+    font-size: 0.8em;
+    font-weight: 700;
   }
   .author_job {
     display: block;
-    color: $secondary;
+    color: #999;
     font-size: 0.8em;
-    font-weight: 700;
-    text-transform: uppercase;
     margin: -5px auto 10px;
   }
   .author_bio {
@@ -45,7 +49,7 @@
     display: block;
   }
   @include media-query($medium-screen) {
-    text-align: right;
+    text-align: left;
     margin: 0 auto;
     padding: 0 0px 80px;
   }
@@ -60,7 +64,7 @@
       display: inline-block;
       margin-left: 1em;
       a.social-link-item {
-        color: $secondary;
+        color: #191970;
         &:hover,
         &:focus {
           color: lighten($secondary, 14%);
@@ -87,7 +91,7 @@
       margin-top: 1em;
       text-transform: lowercase;
       font-size: 85%;
-      color: $secondary;
+      color: #999;
       &:hover,
       &:focus {
         color: lighten($secondary, 14%);

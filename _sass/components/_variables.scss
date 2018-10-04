@@ -21,7 +21,7 @@ $border-width:               .0625rem !default;
 //
 // Font, line-height, and color for body text, headings, and more.
 
-$font-family-sans-serif:     "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-sans-serif:     "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $font-family-serif:          Georgia, "Times New Roman", Times, serif !default;
 $font-family-monospace:      "Roboto Mono", "Courier New", monospace !default;
 $font-family-base:           $font-family-sans-serif !default;
@@ -34,12 +34,12 @@ $font-size-lg:               $font-size-root * 1.25 !default;
 $font-size-sm:               $font-size-root * 0.875 !default;
 $font-size-xs:               $font-size-root * 0.75 !default;
 
-$font-size-h1:               2rem !default;
-$font-size-h2:               1.75rem !default;
-$font-size-h3:               1.5rem !default;
-$font-size-h4:               1.25rem !default;
-$font-size-h5:               1.15rem !default;
-$font-size-h6:               1rem !default;
+$font-size-h1:               1.8rem !default;
+$font-size-h2:               1.1rem !default;
+$font-size-h3:               0.9rem !default;
+$font-size-h4:               0.8rem !default;
+$font-size-h5:               0.7rem !default;
+$font-size-h6:               0.6rem !default;
 
 $base-line-height:            1.5;
 $base-space-unit:             1.5em;
@@ -55,7 +55,7 @@ $text-color:       rgba(0, 0, 0, 0.87) !default;
 $background-color: #f5f5f5;
 
 $white:            #fff;
-$primary:          #42b983;
+$primary:          #191970;
 $secondary:        #8d7edc;
 $success:          #65e892;
 $danger:           #f83e4b;

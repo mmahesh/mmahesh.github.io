@@ -2,9 +2,6 @@
 layout: default
 ---
 
-<a class="btn" href= "{{ site.url }}/" >
-  Home
-</a>
 {% if page.image.feature %}
 <div class="post-image-feature">
   <img class="feature-image" src=
@@ -21,30 +18,27 @@ layout: default
 </div><!-- /.image-wrap -->
 {% endif %}
 
+    <h2 title="{{ page.title }}">{{ page.title }}</h2>
 
 <div id="post">
-  <header class="post-header">
-    <h1 title="{{ page.title }}">{{ page.title }}</h1>
     <span class="post-meta">
-      <span class="post-date">
+      <span class="post-date" >
         {{ page.date | date: "%-d %b %Y" | upcase }}
       </span>
       •
-      {% include read_time.html %}
       {% if page.categories.size > 0 %}
-      •
       {% for cat in page.categories %}
-        <a style="color:red;" class="post-cat" href="{{ site.url }}/categories/#{{ cat }}">{{ cat }}</a>
+        <a style="color:#999;" class="post-cat" href="{{ site.url }}/categories/#{{ cat }}">{{ cat }}</a>
         {% unless forloop.last %}
         <span>/</span>
         {% endunless %}
       {% endfor %}
       {% endif %}
     </span>
-  </header>
-
   <article class="post-content">
+    <font size="3">
     {{ content }}
+    </font>
   </article>
 </div>
 
