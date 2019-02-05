@@ -87,6 +87,8 @@ The blogs mentioned earlier, do a pretty good job in going through the details o
 
 
 ## Overview 
+[Video](https://www.youtube.com/watch?v=5MHbN18s7xo){:target="_blank"}
+
 [Code](https://github.com/mmahesh/variants_of_rmsprop_and_adagrad){:target="_blank"}
 
 <a href='/icml_slides.pdf' target='_blank'>[Slides here]</a>
