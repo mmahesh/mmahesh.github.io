@@ -3,3 +3,4 @@ _drafts/
 /.sass-cache
 .sass-cache
 TODO.txt
+*.DS_Store
