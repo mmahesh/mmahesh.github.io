@@ -31,7 +31,25 @@
 
    <url>
 
+      <loc>https://mmahesh.github.io/articles/2019-04/Convex-Concave-Backtracking-for-Inertial-Bregman-Proximal-Gradient-Algorithms-in-Non-Convex-Optimization/</loc>
+
+      <changefreq>weekly</changefreq>
+
+
+   </url>
+
+   <url>
+
       <loc>https://mmahesh.github.io/about_me/</loc>
+
+      <changefreq>daily</changefreq>
+
+
+   </url>
+
+   <url>
+
+      <loc>https://mmahesh.github.io/show_pub4/</loc>
 
       <changefreq>daily</changefreq>
 
@@ -53,7 +71,25 @@
 
       <loc>http://mmahesh.github.io/articles/2017-06/variants-of-rmsprop-and-adagrad-with-logarithmic-regret-bounds/</loc>
 
-      <changefreq>weekly</changefreq>
+      <changefreq>daily</changefreq>
+
+   </url>
+
+   <url>
+
+      <loc>http://mmahesh.github.io/articles/2019-04/Convex-Concave-Backtracking-for-Inertial-Bregman-Proximal-Gradient-Algorithms-in-Non-Convex-Optimization/</loc>
+
+      <changefreq>daily</changefreq>
+
+
+   </url>
+
+   <url>
+
+      <loc>http://mmahesh.github.io/show_pub4/</loc>
+
+      <changefreq>daily</changefreq>
+
 
    </url>
 
