@@ -4,7 +4,7 @@ title:  "Convex-Concave Backtracking for Inertial Bregman Proximal Gradient Algo
 date:   2019-04-10 
 categories: [non-convex optimization, Bregman distance, machine learning, computer vision]
 excerpt: "Our new paper titled <a href='/show_pub4/' target='_blank' ><b>Convex-Concave Backtracking for Inertial Bregman Proximal
-Gradient Algorithms in Non-Convex Optimization</b></a> written  in collaboration with Peter Ochs, Thomas Pock and Shoham Sabach is now online at arxiv. Please click Read more to read the abstract ."
+Gradient Algorithms in Non-Convex Optimization</b></a> written  in collaboration with Peter Ochs, Thomas Pock and Shoham Sabach is now online at arxiv. Please click below to read the abstract and the algorithm."
 comments: true
 ---
 Our new paper titled [Convex-Concave Backtracking for Inertial Bregman Proximal
@@ -15,3 +15,8 @@ Gradient Algorithms in Non-Convex Optimization](/show_pub4/){:target="_blank"} w
 [Paper link](/show_pub4/){:target="_blank"} 
 
 [arxiv link](https://arxiv.org/abs/1904.03537){:target="_blank"}
+
+> Algorithm given below as in Page 7.
+
+![image](/cocain-bpg-algorithm.png)
+
