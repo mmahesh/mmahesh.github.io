@@ -6,12 +6,12 @@ layout: default
 <section class="post">
   <header class="post-header" >
     <h2 >
-      <a href="{{ site.url }}{{ post.url }}"  target="_blank" class="post-title" title="{{ post.title }}" style="color:#191970;">{{ post.title }}</a>
+      <a href="{{ site.url }}{{ post.url }}"  target="_blank" class="post-title" title="{{ post.title }}" style="color:#191970;">• {{ post.title }}</a>
       {% if post.link %}
       <a class="post-title-link" href="{{ post.link }}" target="_blank" title="{{ post.title }}"><i class="fa fa-external-link"></i></a>
       {% endif %}
     </h2>
-    <p class="post-meta">
+    <!-- <p class="post-meta">
       <span class="post-date">
         {{ post.date | date: "%-d %b %Y" | upcase }}
       </span>
@@ -24,13 +24,13 @@ layout: default
         {% endunless %}
       {% endfor %}
       {% endif %}
-    </p>
+    </p> -->
 
-    {% if post.author %}
+    <!-- {% if post.author %}
       {% assign author = site.data.authors[post.author] %}
     {% else %}
       {% assign author = site.owner %}
-    {% endif %}
+    {% endif %} -->
 
     </header>
 
@@ -47,7 +47,7 @@ layout: default
       </a>
     </div>
     {% endif %} -->
-
+<!-- 
     {% if post.image.feature %}
     <div class="post-image-feature">
       <img src=
@@ -62,8 +62,8 @@ layout: default
       <span class="image-credit">Photo Credit: <a href="{{ post.image.creditlink }}">{{ post.image.credit }}</a></span>
       {% endif %}
     </div><!-- /.image-wrap -->
-    {% endif %}
-<hr color=#191970>
+    {% endif %} -->
+<!-- <hr color=#191970> -->
 
 </section>
 {% endfor %}

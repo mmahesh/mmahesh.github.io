@@ -22,10 +22,10 @@ layout: default
 
 <div id="post">
     <span class="post-meta">
-      <span class="post-date" >
+      <!-- <span class="post-date" >
         {{ page.date | date: "%-d %b %Y" | upcase }}
       </span>
-      •
+      • -->
       {% if page.categories.size > 0 %}
       {% for cat in page.categories %}
         <a style="color:#999;" class="post-cat" href="{{ site.url }}/categories/#{{ cat }}">{{ cat }}</a>
