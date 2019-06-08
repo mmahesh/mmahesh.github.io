@@ -5,12 +5,12 @@ layout: default
 {% for post in site.posts %}
 <section class="post">
   <header class="post-header" >
-    <h2 >
+    <h1 >
       <a href="{{ site.url }}{{ post.url }}"  target="_blank" class="post-title" title="{{ post.title }}" style="color:#191970;">• {{ post.title }}</a>
       {% if post.link %}
       <a class="post-title-link" href="{{ post.link }}" target="_blank" title="{{ post.title }}"><i class="fa fa-external-link"></i></a>
       {% endif %}
-    </h2>
+    </h1>
     <!-- <p class="post-meta">
       <span class="post-date">
         {{ post.date | date: "%-d %b %Y" | upcase }}
