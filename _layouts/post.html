@@ -20,6 +20,11 @@ layout: default
 
     <h2 title="{{ page.title }}">{{ page.title }}</h2>
 
+  <meta name="description" content="{{ post.excerpt }}">
+  <meta name="keywords" content="{% if page.categories.size > 0 %}
+      {% for cat in page.categories %}{{ cat }},{% endfor %}
+      {% endif %}">
+
 <div id="post">
     <span class="post-meta">
       <!-- <span class="post-date" >

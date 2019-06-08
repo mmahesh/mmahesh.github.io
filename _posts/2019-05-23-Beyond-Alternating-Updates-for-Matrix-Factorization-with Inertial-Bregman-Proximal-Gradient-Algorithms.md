@@ -3,8 +3,7 @@ layout: post
 title:  "New Fast Non-Alternating Inertial algorithms for Matrix Factorization"
 date:   2019-05-23 
 categories: [matrix factorization, matrix completion, non-convex optimization, Bregman distance, inertia,  machine learning, computer vision]
-excerpt: "Our new paper titled <a href='/show_pub5/' target='_blank' ><b>Beyond Alternating Updates for Matrix Factorization
-with Inertial Bregman Proximal Gradient Algorithms</b></a> written  in collaboration with Peter Ochs is now online at arxiv. Please click below to read the abstract and the algorithm."
+excerpt: "New Algorithms for Matrix Factorization problems such as NMF, Dictionary Learning, Sparse NMF and many others. Matrix Completion on MovieLens Dataset is also given."
 comments: true
 ---
 Our new paper titled [Beyond Alternating Updates for Matrix Factorization
