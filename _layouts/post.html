@@ -18,9 +18,8 @@ layout: default
 </div><!-- /.image-wrap -->
 {% endif %}
 
-    <h2 title="{{ page.title }}">{{ page.title }}</h2>
+    <h1 title="{{ page.title }}">{{ page.title }}</h1>
 
-  <meta name="description" content="{{ post.excerpt }}">
   <meta name="keywords" content="{% if page.categories.size > 0 %}
       {% for cat in page.categories %}{{ cat }},{% endfor %}
       {% endif %}">
