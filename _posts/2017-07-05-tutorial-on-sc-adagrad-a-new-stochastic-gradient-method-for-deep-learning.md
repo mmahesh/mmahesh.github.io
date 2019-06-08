@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Tutorial on new stochastic gradient methods for deep learning"
+title:  "Tutorial on New Stochastic Gradient Methods for Deep Learning"
 date:   2017-07-05 
 categories: [stochastic optimization, machine learning, deep learning]
 excerpt: "Tutorial on SC-Adagrad, Stochastic Gradient Descent (SGD), Adam, Adagrad, RMSProp and SC-RMSProp, a new variant of RMSProp that we proposed."
