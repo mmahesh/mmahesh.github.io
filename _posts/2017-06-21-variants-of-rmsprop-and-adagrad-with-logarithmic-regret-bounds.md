@@ -2,7 +2,7 @@
 layout: post
 title:  "Variants of RMSProp and Adagrad with Logarithmic Regret Bounds"
 date:   2017-06-21 
-categories: [online convex optimization, stochastic optimization, machine learning, deep learning]
+categories: [online convex optimization, stochastic optimization, machine learning, deep learning,mathematical optimization ]
 excerpt: "ICML 2017 paper with novel stochastic optimization methods."
 comments: true
 ---

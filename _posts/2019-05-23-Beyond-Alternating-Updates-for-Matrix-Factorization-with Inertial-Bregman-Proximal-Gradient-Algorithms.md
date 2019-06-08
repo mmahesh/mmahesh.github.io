@@ -2,7 +2,7 @@
 layout: post
 title:  "New Fast Non-Alternating Inertial Algorithms for Matrix Factorization"
 date:   2019-05-23 
-categories: [matrix factorization, matrix completion, non-convex optimization, Bregman distance, inertia,  machine learning, computer vision]
+categories: [matrix factorization, matrix completion, non-convex optimization, Bregman distance, inertia,  machine learning, computer vision,mathematical optimization]
 excerpt: "New Algorithms for Matrix Factorization problems such as NMF, Dictionary Learning, Sparse NMF and many others. Matrix Completion on MovieLens Dataset is also given."
 comments: true
 ---
