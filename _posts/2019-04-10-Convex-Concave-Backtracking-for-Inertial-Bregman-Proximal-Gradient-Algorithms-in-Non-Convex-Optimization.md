@@ -3,7 +3,7 @@ layout: post
 title:  "Inertial Bregman Proximal Gradient Algorithm in Non-Convex Optimization"
 date:   2019-04-10 
 categories: [non-convex optimization, Bregman distance, inertia, Bregman proximal gradient (BPG),CoCaIn BPG,  machine learning, computer vision]
-excerpt: "Fast Inertial BPG Algorithm in Non-Convex Optimization."
+excerpt: "Fast Inertial Algorithms for Non-Convex Optimization."
 comments: true
 ---
 Our new paper titled [Convex-Concave Backtracking for Inertial Bregman Proximal
