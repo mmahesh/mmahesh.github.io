@@ -4,7 +4,7 @@
 
    <url>
 
-      <loc>https://mmahesh.github.io/</loc>
+      <loc>https://mmahesh.github.io</loc>
 
       <changefreq>daily</changefreq>
 
@@ -14,7 +14,7 @@
 
    <url>
 
-      <loc>https://mmahesh.github.io/articles/2017-06/variants-of-rmsprop-and-adagrad-with-logarithmic-regret-bounds/</loc>
+      <loc>https://mmahesh.github.io/articles/2017-06/variants-of-rmsprop-and-adagrad-with-logarithmic-regret-bounds</loc>
 
       <changefreq>weekly</changefreq>
 
@@ -22,7 +22,7 @@
 
    <url>
 
-      <loc>https://mmahesh.github.io/publications/</loc>
+      <loc>https://mmahesh.github.io/publications</loc>
 
       <changefreq>daily</changefreq>
 
@@ -31,7 +31,7 @@
 
    <url>
 
-      <loc>https://mmahesh.github.io/articles/2019-04/Convex-Concave-Backtracking-for-Inertial-Bregman-Proximal-Gradient-Algorithms-in-Non-Convex-Optimization/</loc>
+      <loc>https://mmahesh.github.io/articles/2019-04/Inertial-Bregman-Proximal-Gradient-Algorithm-in-Non-Convex-Optimization</loc>
 
       <changefreq>weekly</changefreq>
 
@@ -40,7 +40,16 @@
 
    <url>
 
-      <loc>https://mmahesh.github.io/about_me/</loc>
+      <loc>https://mmahesh.github.io/articles/2019-05/New-Fast-Non-Alternating-Inertial-Algorithms-for-Matrix-Factorization</loc>
+
+      <changefreq>weekly</changefreq>
+
+
+   </url>
+
+   <url>
+
+      <loc>https://mmahesh.github.io/about-me</loc>
 
       <changefreq>daily</changefreq>
 
@@ -48,52 +57,6 @@
    </url>
 
    
-
-   <url>
-
-      <loc>http://mmahesh.github.io/</loc>
-
-      <changefreq>daily</changefreq>
-
-      <priority>1</priority>
-
-   </url>
-
-   <url>
-
-      <loc>http://mmahesh.github.io/articles/2017-06/variants-of-rmsprop-and-adagrad-with-logarithmic-regret-bounds/</loc>
-
-      <changefreq>daily</changefreq>
-
-   </url>
-
-   <url>
-
-      <loc>http://mmahesh.github.io/articles/2019-04/Convex-Concave-Backtracking-for-Inertial-Bregman-Proximal-Gradient-Algorithms-in-Non-Convex-Optimization/</loc>
-
-      <changefreq>daily</changefreq>
-
-
-   </url>
-
-   
-   <url>
-
-      <loc>http://mmahesh.github.io/publications/</loc>
-
-      <changefreq>daily</changefreq>
-
-
-   </url>
-
-   <url>
-
-      <loc>http://mmahesh.github.io/about_me/</loc>
-
-      <changefreq>daily</changefreq>
-
-
-   </url>
 
 
 </urlset>
