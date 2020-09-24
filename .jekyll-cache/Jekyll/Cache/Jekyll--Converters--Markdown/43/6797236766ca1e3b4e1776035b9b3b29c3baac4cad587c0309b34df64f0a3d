@@ -1,0 +1,122 @@
+I"Ÿ<p>This is a brief tutorial (without lot of mathematical details) on SC-Adagrad, a new stochastic optimization method proposed in <a href="/show_pub1/" target="_blank">here</a>. Disclaimer: I am one of the authors :). This is a joint work with Prof. Dr. Matthias Hein, Saarland University . Clearly, there is an abundance of stochastic optimization methods for training deep neural networks. Recently, <a href="https://arxiv.org/pdf/1412.6980.pdf" target="_blank">Adam</a> has become a go to optimization method for training deep nets. In this post, I will briefly review Stochastic Gradient Descent (SGD), Adam, Adagrad, RMSProp and finally dwell into the details of SC-Adagrad, SC-RMSProp and a new variant of RMSProp that we proposed.</p>
+
+<p>This is definitely not the first tutorial of its kind. There are many excellent blog posts which briefly summarize the stochastic optimization methods like <a href="http://sebastianruder.com/optimizing-gradient-descent/" target="_blank">this</a> and <a href="http://colinraffel.com/wiki/stochastic_optimization_techniques" target="_blank">this</a>. In my opinion, if you read these blog posts before reading this post, you are more likely to understand the SC-Adagrad algorithm better. For those who are more mathematically inclined, I would suggest to go through the <a href="/show_pub1/" target="_blank">paper</a> instead.</p>
+
+<p>Note: In the following algorithms, all the operations are element-wise. Also, my motive is to give a brief overview, so that you get an idea of the algorithm as easily as possible. Hence, I had to exclude lot of mathematical details.</p>
+
+<h2 id="stochastic-gradient-descent-aka-sgd">Stochastic Gradient Descent a.k.a SGD</h2>
+
+<p>Let $g_t$  be your gradient while training a model with parameters at $t$-th instance denoted by $\theta_t$, and choosing $\alpha$ to the stepsize parameter the SGD update step is</p>
+
+\[\theta_{t+1}\gets\theta_t - \alpha g_t\]
+
+<h2 id="adam"><a href="https://arxiv.org/pdf/1412.6980.pdf" target="_blank">Adam</a></h2>
+
+<p>Choosing the same notation as SGD, and with some additional steps,Adam algorithm is as follows</p>
+
+\[m_{t} = \beta_1 m_{t-1} + (1-\beta_1)g_{t}\\
+\widehat{m}_{t} = \frac{m_{t}}{1-\beta_1^{t}}\\
+v_{t} = \beta_2 v_{t-1} + (1-\beta_2)g_{t}^2\\
+\widehat{v}_{t} = \frac{v_{t}}{1-\beta_2^{t}}\\
+\theta_{t+1}\gets\theta_t - \alpha \frac{\widehat{m}_{t}}{\sqrt{\widehat{v}_{t}}+\epsilon}\]
+
+<p>Here $\epsilon$ is a numerical stability parameter. The terms $m_{t}$ and $v_{t}$ represent the second order moments of the gradient. Depending on how the moment is calculated, the bias correction term has to be applied to obtain \(\widehat{m}_{t}\) and \(\widehat{v}_{t}\) respectively. Please find the details in the Adam paper <a href="https://arxiv.org/pdf/1412.6980.pdf" target="_blank">here</a>.</p>
+
+<h2 id="rmsprop"><a href="http://www.cs.toronto.edu/~tijmen/csc321/slides/lecture_slides_lec6.pdf" target="_blank">RMSProp</a></h2>
+
+<p>Choosing $\beta &gt; 0$ typically $0.9$ the RMSProp algorithm is given by</p>
+
+\[v_{t} = \beta v_{t-1} + (1-\beta) g_{t}^2\\
+\theta_{t+1}\gets\theta_t - \alpha \frac{g_t}{\sqrt{v_{t}}+\epsilon}\]
+
+<p>We propose a new modified variant of RMSProp as follows</p>
+
+\[\beta_t = 1 - \frac{1}{t}\\
+v_{t} = \beta_t v_{t-1} + (1-\beta_t) g_{t}^2\\
+\theta_{t+1}\gets\theta_t - \alpha \frac{g_t}{\sqrt{tv_{t}}+\delta}\]
+
+<p>where $0&lt;\gamma \leq 1$ and $\delta &gt; 0$ typically $10^{-8}$. For more details, see Section 4 <a href="/show_pub1/" target="_blank">here</a>.</p>
+
+<h2 id="adagrad"><a href="http://www.magicbroom.info/Papers/DuchiHaSi10.pdf" target="_blank">Adagrad</a></h2>
+
+<p>Adam was proposed after Adagrad, but for convenience, I described Adam before Adagrad here. Choosing the same notation as Adam, the Adagrad algorithm is as follows</p>
+
+\[v_{t} = v_{t-1} + g_{t}^2\\
+\theta_{t+1}\gets\theta_t - \alpha \frac{g_t}{\sqrt{v_{t}}+\epsilon}\]
+
+<p>Unlike Adam, the first order moments are ignored. Even though it seemed like the second order moment is not calculated, Adagrad actually computes the second order moment. We describe this in the subsection 2.3 <a href="/show_pub1/" target="_blank">here</a>. Also this leads to an interesting phenomenon that Adagrad is a special case of RMSProp which we describe in Section 4 in detail.</p>
+
+<h2 id="sc-adagrad"><a href="/show_pub1/" target="_blank">SC-Adagrad</a></h2>
+
+<p>Now, we provide the SC-Adagrad below</p>
+
+\[v_{t} = v_{t-1} + g_{t}^2\\
+\theta_{t+1}\gets\theta_t - \alpha \frac{g_t}{v_{t}+\xi_2 e^{-\xi_1 v_{t}}}\]
+
+<p>Note these are the changes compared to Adagrad,</p>
+
+<blockquote>
+  <p>We removed the square root in the denominator of Adagrad</p>
+</blockquote>
+
+<blockquote>
+  <p>Also we changed the numerical stability parameter from $\epsilon$ to $\xi_2 e^{-\xi_1 v_{t}}$ where  in general we choose $\xi_1=0.1, \xi_2=0.1$.</p>
+</blockquote>
+
+<blockquote>
+  <p>Adagrad was developed for convex problems, whereas we developed the SC-Adagrad primarily for Strongly convex problems. To our surprise, it had excellent performance (in terms of Test accuracy) on many deep neural networks in particular ResNet-18, CNN and MLP.</p>
+</blockquote>
+
+<h2 id="sc-rmsprop"><a href="/show_pub1/" target="_blank">SC-RMSProp</a></h2>
+<p>In the same spirit of RMSProp, we have SC-RMSProp given by</p>
+
+\[\beta_t = 1 -\frac{1}{t}\\
+v_{t} = \beta_t v_{t-1} + (1-\beta_t) g_{t}^2\\
+\theta_{t+1}\gets\theta_t - \alpha \frac{g_t}{tv_{t}+\xi_2 e^{-\xi_1 tv_{t}}}\]
+
+<p>where $0&lt;\gamma \leq 1$.</p>
+
+<p>The blogs mentioned earlier, do a pretty good job in going through the details of stochastic gradient methods. This post just tries to give a brief overview of SC-Adagrad, SC-RMSProp Algorithms. For detailed analysis on the online convex optimation framework, for getting to know the equivalence of RMSProp and Adagrad, check our paper, to see empirical results on ResNet-18 network, CNN and MLP see <a href="/show_pub1/" target="_blank">here</a> or <a href="http://www.ml.uni-saarland.de/Publications/MukHei-VariantsRMSPropAdagradLogRegretLongVersion.pdf" target="_blank">here</a>.</p>
+
+<h2 id="overview">Overview</h2>
+<p><a href="https://www.youtube.com/watch?v=5MHbN18s7xo" target="_blank">Video</a></p>
+
+<p><a href="https://github.com/mmahesh/variants_of_rmsprop_and_adagrad" target="_blank">Code</a></p>
+
+<p><a href="/icml_slides.pdf" target="_blank">[Slides here]</a>
+<br />
+<a href="/main.pdf" target="_blank">[Poster here]</a>
+<br /></p>
+<div align="center">
+  <a href="https://raw.githubusercontent.com/mmahesh/variants_of_rmsprop_and_adagrad/master/poster_image.jpg" target="_blank"><img src="https://raw.githubusercontent.com/mmahesh/variants_of_rmsprop_and_adagrad/master/poster_image.jpg" target="_blank" /></a><br /><br />
+</div>
+
+<p>Thanks for reading the post. Stay tuned for more updates. :)</p>
+
+<h2 id="references">References:</h2>
+
+<p><a href="http://www.magicbroom.info/Papers/DuchiHaSi10.pdf" target="_blank">Adagrad Paper</a></p>
+
+<p><a href="http://www.cs.toronto.edu/~tijmen/csc321/slides/lecture_slides_lec6.pdf" target="_blank">RMSProp Slides</a></p>
+
+<p><a href="https://arxiv.org/pdf/1412.6980.pdf" target="_blank">Adam Paper</a></p>
+
+<p><a href="http://www.ml.uni-saarland.de/Publications/MukHei-VariantsRMSPropAdagradLogRegret.pdf" target="_blank">SC-Adagrad,SC-RMSProp paper</a></p>
+
+<p>and ofcourse</p>
+
+<p><a href="http://sebastianruder.com/optimizing-gradient-descent/" target="_blank">BlogPost1</a></p>
+
+<p><a href="http://colinraffel.com/wiki/stochastic_optimization_techniques" target="_blank">BlogPost2</a></p>
+
+<p>and other interesting reads</p>
+
+<p><a href="http://ufldl.stanford.edu/tutorial/supervised/OptimizationStochasticGradientDescent/" target="_blank">UFLDL Tutorial Post1</a></p>
+
+<p><a href="http://www.deeplearningbook.org/contents/optimization.html" target="_blank">Deep learning book Chapter</a></p>
+
+<p><a href="http://cs231n.github.io/optimization-1/" target="_blank">Stanford C231n notes</a>
+<!-- TODO: Motivation, more details fill in other algorithms aswell
+Give Code aswell maybe github repo
+Add resnet, cnn exps --></p>
+:ET
