@@ -3,7 +3,7 @@
 # Site wide configuration
 ####################################
 #
-title: Mukkamala Mahesh Chandra, Mathematical Optimization Group, Saarland University.
+title: Mukkamala Mahesh Chandra, Mathematical Optimization Group, University of Tuebingen.
 email:
 description: Mathematical Optimization Thoughts, blog on Inertial Bregman Proximal Gradient Algorithm and in general on Non-convex Non-smooth Non-Lipschitz  optimization, maybe Convex optimization and Matrix Factorization.
 url: # the base hostname & protocol for your site
@@ -36,7 +36,7 @@ kramdown:
 owner:
   name: Mahesh Chandra Mukkamala
   avatar: 
-  job: "Phd Student, Mathematical Optimization Group, Saarland University"
+  job: "Phd Student, Mathematical Optimization Group,  University of Tuebingen"
   bio: ""
   email: 
   disqus-shortname: disqus_hfXAYgnWPX
